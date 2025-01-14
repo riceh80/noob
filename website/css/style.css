@@ -29,14 +29,14 @@ p {
     color: #000000;
     text-align: center;
     font-size: 60px;
-    animation: fade 5s ease-in-out;
+    animation: fade 2s ease-in-out;
 }
 
 .valentine-image {
     width: 300px;
     height: auto;
     margin-top: 0px;
-    animation: fade 5s ease-in-out;
+    animation: fade 2s ease-in-out;
 }
 
 @keyframes fade {
@@ -48,14 +48,122 @@ p {
     }
 }
 
+@keyframes fadeout {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.empty-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    color: #000;
+}
+
 .btn {
     margin-top: 20px;
     padding: 10px 20px;
     font-size: 20px;
-    color: #fff;
+    color: #ffffff;
     background-color: #ff69b4;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.valentine-button-yes {
+    background-color: #96ff7f;
+    color: #ffffff;
+    padding: 15px 30px;
+    font-size: 25px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    animation: fade 5s ease-in-out
+}
+
+.valentine-button-no {
+    background-color: #fd5f5f;
+    color: #ffffff;
+    padding: 15px 30px;
+    font-size: 25px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    animation: fade 5s ease-in-out
+}
+
+.valentine-button-yes:hover {
+    background-color: #00ff22;
+    transform: scale(1.1);
+}
+
+.valentine-button-no:hover {
+    background-color: #ff0000;
+    transform: scale(1.1);
+}
+
+.new-section {
+    font-size: 20px;
+    color: #000;
+    text-align: center;
+    animation: fade 2s ease-in-out;
+}
+
+.new-section h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.image-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.image-item img {
+    width: 300px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.next-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #ff69b4;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.next-button:hover {
+    background-color: #ff1493;
 }
