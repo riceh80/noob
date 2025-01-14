@@ -58,6 +58,11 @@ document.addEventListener('DOMContentLoaded', () => {
                             <input type="radio" id="location4" name="location" value="axe throwing">
                             <label for="location4">Axe Throwing</label>
                         </div>
+                        <div class="location-item">
+                            <input type="radio" id="location5" name="location" value="other">
+                            <label for="location5">Other:</label>
+                            <input type="text" id="other-location" name="other-location" placeholder="Enter your own place">
+                        </div>
                     </div>
                     <button class="next-button">Next</button>
                 </div>`;
