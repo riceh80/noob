@@ -15,9 +15,9 @@ document.addEventListener('DOMContentLoaded', () => {
                             <label for="image1">labubu</label>
                         </div>
                         <div class="image-item">
-                            <img src="https://www.kikagoods.com/cdn/shop/files/DS220100-3896-00-main-img-02.jpg?v=1723037752&width=770" alt="Image 2">
+                            <img src="https://www.aitaikuji.com/media/catalog/product/cache/777e28f39a0fa26056b4f7a0d5935fb0/0/0/00094781836_12.jpg" alt="Image 2">
                             <input type="checkbox" id="image2" name="image2">
-                            <label for="image2">lucky emma</label>
+                            <label for="image2">emmas</label>
                         </div>
                         <div class="image-item">
                             <img src="https://ae01.alicdn.com/kf/S4b0b24cb15c543be912759728d346ed66.jpg" alt="Image 3">
@@ -36,8 +36,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const nextButton = document.querySelector('.next-button');
             nextButton.addEventListener('click', () => {
-                alert('Next button clicked!');
-                // Add your logic for the next button here
+                centerContainer.style.animation = 'fadeout 2s ease-in-out';
+                setTimeout(() => {
+                    centerContainer.innerHTML = `
+                    <div class="new-page">
+                    <h2>Where would you like to go on a date?</h2>
+                    <div class="location-container">
+                        <div class="location-item">
+                            <input type="radio" id="location1" name="location" value="shooting range">
+                            <label for="location1">Shooting Range</label>
+                        </div>
+                        <div class="location-item">
+                            <input type="radio" id="location2" name="location" value="park">
+                            <label for="location2">Park</label>
+                        </div>
+                        <div class="location-item">
+                            <input type="radio" id="location3" name="location" value="cafe">
+                            <label for="location3">Cafe</label>
+                        </div>
+                        <div class="location-item">
+                            <input type="radio" id="location4" name="location" value="axe throwing">
+                            <label for="location4">Axe Throwing</label>
+                        </div>
+                    </div>
+                    <button class="next-button">Next</button>
+                </div>`;
+                centerContainer.style.animation = 'fade 2s ease-in-out';
+                }, 2000);
             });
         }, 2000); 
     });
