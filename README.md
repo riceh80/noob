@@ -6,8 +6,6 @@ todo:
 
 more image for check box
 
-ask what activities is want 
-
 ask for the date of time due to being in buffalo must reschedule valentine date
 
 make a certifatice 
