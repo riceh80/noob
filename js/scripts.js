@@ -1,9 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
     const yesButton = document.querySelector('.valentine-button-yes');
+    const noButton = document.querySelector('.valentine-button-no');
     const centerContainer = document.querySelector('.center-container');
 
     yesButton.addEventListener('click', () => {
-        centerContainer.style.animation = 'fadeout 2s ease-in-out';
+        centerContainer.style.animation = 'fadeout 800ms ease-in-out';
         setTimeout(() => {
             centerContainer.innerHTML = `
                 <div class="new-section">
@@ -37,11 +38,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                     <button class="next-button">Next</button>
                 </div>`;
-            centerContainer.style.animation = 'fade 2s ease-in-out';
+            centerContainer.style.animation = 'fade 800ms ease-in-out';
 
             const nextButton = document.querySelector('.next-button');
             nextButton.addEventListener('click', () => {
-                centerContainer.style.animation = 'fadeout 2s ease-in-out';
+                centerContainer.style.animation = 'fadeout 800ms ease-in-out';
                 setTimeout(() => {
                     centerContainer.innerHTML = `
                     <div class="new-page">
@@ -71,10 +72,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                     <button class="next-button">Next</button>
                 </div>`;
-                centerContainer.style.animation = 'fade 2s ease-in-out';
+                centerContainer.style.animation = 'fade 800ms ease-in-out';
                 const nextButton = document.querySelector('.next-button');
                 nextButton.addEventListener('click', () => {
-                    centerContainer.style.animation = 'fadeout 2s ease-in-out';
+                    centerContainer.style.animation = 'fadeout 800ms ease-in-out';
                     setTimeout(() => {
                         centerContainer.innerHTML = `
                  <div class="next-page">
@@ -89,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             </div>
                             <button class="submit-button">Submit</button>
                         </div>`;
-                    centerContainer.style.animation = 'fade 2s ease-in-out';
+                    centerContainer.style.animation = 'fade 800ms ease-in-out';
 
                     const submitButton = document.querySelector('.submit-button');
                     submitButton.addEventListener('click', () => {
@@ -98,10 +99,17 @@ document.addEventListener('DOMContentLoaded', () => {
                         alert(`You chose: ${finalLocation} on ${selectedDate} at ${selectedTime}`);
                         // You can add further actions here, like navigating to another page or displaying more content
                           });
-                     }, 2000);
+                     }, 800);
                  });
-             }, 2000);
+             }, 800);
          });
         });
+    });
+
+    noButton.addEventListener('click', () => {
+        noButton.textContent = "You don't have an option";
+        setTimeout(() => {
+            noButton.textContent = "No";
+        }, 2000);
     });
 });
