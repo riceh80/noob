@@ -4,15 +4,8 @@ a website for valentine day. first project right here so its not supposed to be 
 
 todo:
 
-more image for check box
-
-ask for the date of time due to being in buffalo must reschedule valentine date
-
 make a certifatice 
 
-add more on dates locations
-
-change fonts (aidan idea)
 
 
 not adding:
@@ -32,4 +25,7 @@ made a check box with images (might need to more)
 
 finished making places for dates
 
+made an other option to put in user stuff
+
+made a time and date for when date
 
