@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const noButton = document.querySelector('.valentine-button-no');
     const centerContainer = document.querySelector('.center-container');
 
-    yesButton.addEventListener('click', () => {
+    const handleYesButtonClick = () => {
         centerContainer.style.animation = 'fadeout 800ms ease-in-out';
         setTimeout(() => {
             centerContainer.innerHTML = `
@@ -72,6 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                     <button class="next-button">Next</button>
                 </div>`;
+                    
                 centerContainer.style.animation = 'fade 800ms ease-in-out';
                 const nextButton = document.querySelector('.next-button');
                 nextButton.addEventListener('click', () => {
@@ -88,28 +89,36 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <label for="time">Choose a time:</label>
                                 <input type="time" id="time" name="time">
                             </div>
-                            <button class="submit-button">Submit</button>
+                            <button class="next-button">Submit</button>
                         </div>`;
-                    centerContainer.style.animation = 'fade 800ms ease-in-out';
-
-                    const submitButton = document.querySelector('.submit-button');
-                    submitButton.addEventListener('click', () => {
-                        const selectedDate = document.getElementById('date').value;
-                        const selectedTime = document.getElementById('time').value;
-                        alert(`You chose: ${finalLocation} on ${selectedDate} at ${selectedTime}`);
-                        // You can add further actions here, like navigating to another page or displaying more content
+                        centerContainer.style.animation = 'fade 800ms ease-in-out';
+                        
+                        const nextButton = document.querySelector('.next-button');
+                        nextButton.addEventListener('click',()=> {
+                            centerContainer.style.animation = 'fadeout 800ms ease-in-out';
+                            setTimeout(() => {
+                                centerContainer.innerHTML = `
+                                <div class="final-page">
+                                    <h2>Thank you for being my valetine 😘! Please give me a 5 star review in yelp and tell me your experience hehe.</h2>
+                                </div>`;
+                                centerContainer.style.animation = 'fade 800ms ease-in-out';
+                            });
+                        },800);
                           });
                      }, 800);
                  });
              }, 800);
          });
-        });
-    });
+        };
+    
+
+    yesButton.addEventListener('click', handleYesButtonClick);
 
     noButton.addEventListener('click', () => {
-        noButton.textContent = "You don't have an option";
-        setTimeout(() => {
-            noButton.textContent = "No";
-        }, 2000);
+        noButton.textContent = 'Yes';
+        noButton.classList.remove('valentine-button-no');
+        noButton.classList.add('valentine-button-yes');
+        noButton.addEventListener('click', handleYesButtonClick);
     });
+
 });
