@@ -29,6 +29,11 @@ document.addEventListener('DOMContentLoaded', () => {
                             <input type="checkbox" id="image4" name="image4">
                             <label for="image4">hello kitty</label>
                         </div>
+                         <div class="image-item">
+                            <input type="checkbox" id="location5" name="location" value="other">
+                            <label for="location5">Other:</label>
+                            <input type="text" id="other-location" name="other-location" placeholder="Enter another type">
+                        </div>
                     </div>
                     <button class="next-button">Next</button>
                 </div>`;
@@ -61,14 +66,42 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="location-item">
                             <input type="radio" id="location5" name="location" value="other">
                             <label for="location5">Other:</label>
-                            <input type="text" id="other-location" name="other-location" placeholder="Enter your own place">
+                            <input type="text" id="other-location" name="other-location" placeholder="Enter location">
                         </div>
                     </div>
                     <button class="next-button">Next</button>
                 </div>`;
                 centerContainer.style.animation = 'fade 2s ease-in-out';
-                }, 2000);
-            });
-        }, 2000); 
+                const nextButton = document.querySelector('.next-button');
+                nextButton.addEventListener('click', () => {
+                    centerContainer.style.animation = 'fadeout 2s ease-in-out';
+                    setTimeout(() => {
+                        centerContainer.innerHTML = `
+                 <div class="next-page">
+                            <h2>Since I'm not home... what day should our date be?</h2>
+                            <div class="date-container">
+                                <label for="date">Choose a date:</label>
+                                <input type="date" id="date" name="date">
+                            </div>
+                            <div class="time-container">
+                                <label for="time">Choose a time:</label>
+                                <input type="time" id="time" name="time">
+                            </div>
+                            <button class="submit-button">Submit</button>
+                        </div>`;
+                    centerContainer.style.animation = 'fade 2s ease-in-out';
+
+                    const submitButton = document.querySelector('.submit-button');
+                    submitButton.addEventListener('click', () => {
+                        const selectedDate = document.getElementById('date').value;
+                        const selectedTime = document.getElementById('time').value;
+                        alert(`You chose: ${finalLocation} on ${selectedDate} at ${selectedTime}`);
+                        // You can add further actions here, like navigating to another page or displaying more content
+                          });
+                     }, 2000);
+                 });
+             }, 2000);
+         });
+        });
     });
 });
