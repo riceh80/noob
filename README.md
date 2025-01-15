@@ -39,4 +39,4 @@ changed the no button so it turned into yes
 
 find a way to add an ending after the time and date section
 
-added copyright
+added watermarking at the bottom right
