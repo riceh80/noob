@@ -40,3 +40,9 @@ changed the no button so it turned into yes
 find a way to add an ending after the time and date section
 
 added watermarking at the bottom right
+
+1/18/2025
+
+had to change image
+
+added spotify playlist
