@@ -7,12 +7,12 @@ document.addEventListener('DOMContentLoaded', () => {
         centerContainer.style.animation = 'fadeout 800ms ease-in-out';
         setTimeout(() => {
             centerContainer.innerHTML = `
-                <div class="section">
-                    <h2>hihi!!! Happy Valentine day thxs for being my valentine Vivian Yang 😘! 
+                <div class="section centered-message">
+                    <h2 class="smaller-font"> Annyeong! Happy Valentine day! Thxs for being my valentine you cutie (Vivian Yang)! Really appearaciate it! (even though there isn't a choice hehe). 
                     Sorry you might think I'm kinda annoying with the spam when the truth is I'm just a really clingy person
-                    when it comes to being with you. Sorry I'm not there to physically be there for you during valentine however I can make it up as I'm given you a gift that you already have... the labubu
-                    and a very nice date when I am back hehe. I promise that I will make it all up for you and have fun with the website! Make sure if you need anything I am here for you even though we are 404 miles away, I will always support you! 
-                    <3</h2>
+                    when it comes to being with someone like you. Sorry I'm not there to physically be there for you during valentine however I can make it up as I've given you a gift... the labubu
+                    and a very nice date when I'm back hehe (ofc im paying so u dont have to since it is a date). I promise that I will make it all up for you and have fun with the website! Make sure if you need anything I am here for you even though we are 404 miles away, I will always support you! 
+                    Miss you cupcake <3</h2>
                     <button class="next-button">Next</button>
                 </div>`;
             centerContainer.style.animation = 'fade 800ms ease-in-out';

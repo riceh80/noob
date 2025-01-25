@@ -177,3 +177,14 @@ p {
     font-size: 15px;
     color: #7b7979;
 }
+
+.smaller-font {
+    font-size: 40px; /* Adjust this value as needed */
+}
+
+.centered-message {
+    max-width: 50%;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
