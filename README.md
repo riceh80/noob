@@ -46,3 +46,12 @@ added watermarking at the bottom right
 had to change image
 
 added spotify playlist
+
+
+1/25/2025
+
+made the front page the intro
+
+changed the spotify music
+
+deleted the item pic
