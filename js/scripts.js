@@ -7,45 +7,28 @@ document.addEventListener('DOMContentLoaded', () => {
         centerContainer.style.animation = 'fadeout 800ms ease-in-out';
         setTimeout(() => {
             centerContainer.innerHTML = `
-                <div class="new-section">
-                    <h2>Which one do you like the most</h2>
-                    <div class="image-container">
-                        <div class="image-item">
-                            <img src="https://img4.dhresource.com/webp/m/0x0/f3/albu/jc/m/03/52192df9-03b2-4bfc-b476-c483cfe812df.jpg" alt="Image 1">
-                            <input type="checkbox" id="image1" name="image1">
-                            <label for="image1">labubu</label>
-                        </div>
-                        <div class="image-item">
-                            <img src="https://www.aitaikuji.com/media/catalog/product/cache/777e28f39a0fa26056b4f7a0d5935fb0/0/0/00094781836_12.jpg" alt="Image 2">
-                            <input type="checkbox" id="image2" name="image2">
-                            <label for="image2">emmas</label>
-                        </div>
-                        <div class="image-item">
-                            <img src="https://ae01.alicdn.com/kf/S4b0b24cb15c543be912759728d346ed66.jpg" alt="Image 3">
-                            <input type="checkbox" id="image3" name="image3">
-                            <label for="image3">sembo</label>
-                        </div>
-                        <div class="image-item">
-                            <img src="https://www.sanrio.com/cdn/shop/files/ecomm-CHGAL-50TH_367x353px_01-HK_1000x.png?v=1706834552" alt="Image 4">
-                            <input type="checkbox" id="image4" name="image4">
-                            <label for="image4">hello kitty</label>
-                        </div>
-                         <div class="image-item">
-                            <input type="checkbox" id="location5" name="location" value="other">
-                            <label for="location5">Other:</label>
-                            <input type="text" id="other-location" name="other-location" placeholder="Enter another type">
-                        </div>
-                    </div>
+                <div class="section">
+                    <h2>hihi!!! Happy Valentine day thxs for being my valentine Vivian Yang 😘! 
+                    Sorry you might think I'm kinda annoying with the spam when the truth is I'm just a really clingy person
+                    when it comes to being with you. Sorry I'm not there to physically be there for you during valentine however I can make it up as I'm given you a gift that you already have... the labubu
+                    and a very nice date when I am back hehe. I promise that I will make it all up for you and have fun with the website! Make sure if you need anything I am here for you even though we are 404 miles away, I will always support you! 
+                    <3</h2>
                     <button class="next-button">Next</button>
                 </div>`;
             centerContainer.style.animation = 'fade 800ms ease-in-out';
 
             const nextButton = document.querySelector('.next-button');
-            nextButton.addEventListener('click', () => {
-                centerContainer.style.animation = 'fadeout 800ms ease-in-out';
-                setTimeout(() => {
-                    centerContainer.innerHTML = `
-                    <div class="new-page">
+            nextButton.addEventListener('click', handleNextButtonClick);
+        }, 800);
+    };
+
+
+
+    const handleNextButtonClick = () => {
+        centerContainer.style.animation = 'fadeout 800ms ease-in-out';
+        setTimeout(() => {
+            centerContainer.innerHTML = `
+                <div class="new-page">
                     <h2>Where would you like to go on a date?</h2>
                     <div class="location-container">
                         <div class="location-item">
@@ -72,45 +55,46 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                     <button class="next-button">Next</button>
                 </div>`;
-                    
-                centerContainer.style.animation = 'fade 800ms ease-in-out';
-                const nextButton = document.querySelector('.next-button');
-                nextButton.addEventListener('click', () => {
-                    centerContainer.style.animation = 'fadeout 800ms ease-in-out';
-                    setTimeout(() => {
-                        centerContainer.innerHTML = `
-                 <div class="next-page">
-                            <h2>Since I'm not home... what day should our date be?</h2>
-                            <div class="date-container">
-                                <label for="date">Choose a date:</label>
-                                <input type="date" id="date" name="date">
-                            </div>
-                            <div class="time-container">
-                                <label for="time">Choose a time:</label>
-                                <input type="time" id="time" name="time">
-                            </div>
-                            <button class="next-button">Submit</button>
-                        </div>`;
-                        centerContainer.style.animation = 'fade 800ms ease-in-out';
-                        
-                        const nextButton = document.querySelector('.next-button');
-                        nextButton.addEventListener('click',()=> {
-                            centerContainer.style.animation = 'fadeout 800ms ease-in-out';
-                            setTimeout(() => {
-                                centerContainer.innerHTML = `
-                                <div class="final-page">
-                                    <h2>Thank you for being my valetine 😘! Please give me a 5 star review in yelp and tell me your experience hehe.</h2>
-                                </div>`;
-                                centerContainer.style.animation = 'fade 800ms ease-in-out';
-                            });
-                        },800);
-                          });
-                     }, 800);
-                 });
-             }, 800);
-         });
-        };
-    
+            centerContainer.style.animation = 'fade 800ms ease-in-out';
+
+            const nextButton = document.querySelector('.next-button');
+            nextButton.addEventListener('click', handleNextButtonClick3);
+        }, 800);
+    };
+
+    const handleNextButtonClick3 = () => {
+        centerContainer.style.animation = 'fadeout 800ms ease-in-out';
+        setTimeout(() => {
+            centerContainer.innerHTML = `
+                <div class="next-page">
+                    <h2>Since I'm not home... what day should our date be?</h2>
+                    <div class="date-container">
+                        <label for="date">Choose a date:</label>
+                        <input type="date" id="date" name="date">
+                    </div>
+                    <div class="time-container">
+                        <label for="time">Choose a time:</label>
+                        <input type="time" id="time" name="time">
+                    </div>
+                    <button class="next-button">Submit</button>
+                </div>`;
+            centerContainer.style.animation = 'fade 800ms ease-in-out';
+
+            const nextButton = document.querySelector('.next-button');
+            nextButton.addEventListener('click', handleNextButtonClick4);
+        }, 800);
+    };
+
+    const handleNextButtonClick4 = () => {
+        centerContainer.style.animation = 'fadeout 800ms ease-in-out';
+        setTimeout(() => {
+            centerContainer.innerHTML = `
+                <div class="final-page">
+                    <h2>Thank you for being my valetine 😘! Please give me a 5 star review in yelp and tell me your experience hehe.</h2>
+                </div>`;
+            centerContainer.style.animation = 'fade 800ms ease-in-out';
+        }, 800);
+    };
 
     yesButton.addEventListener('click', handleYesButtonClick);
 
@@ -120,5 +104,6 @@ document.addEventListener('DOMContentLoaded', () => {
         noButton.classList.add('valentine-button-yes');
         noButton.addEventListener('click', handleYesButtonClick);
     });
-
 });
+
+
