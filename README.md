@@ -55,3 +55,8 @@ made the front page the intro
 changed the spotify music
 
 deleted the item pic
+
+
+2/6/2025
+
+changed up everything... got rid of the picking places or time and dates or gifts cuz already gave her the gifts and I want us 2 to plan it or if anything one of us can if she doesn't or does want to pick out the places. Replaced them all with notes
