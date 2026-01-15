@@ -1,7 +1,9 @@
 const valentine = "VALENTINE"
 const letters = valentine.split("");
-const slot = new Array(valentine.length).fill("");
 let draggedElement = null;
+let offsetX = 0;
+let offsetY = 0;
+const slot = new Array(valentine.length).fill("");
 
 // Shuffle function to randomize letter order
 function shuffle(array) {
@@ -15,86 +17,77 @@ function shuffle(array) {
 
 const shuffledLetters = shuffle(letters);
 
-
-
-function dragStart(event){
-    draggedElement = event.target;
-    const draggedLetter = event.target.dataset.letter;
-    event.dataTransfer.effectAllowed = "move";
-    event.dataTransfer.setData("text/plain", draggedLetter);
-    event.target.style.opacity = "0.5";
-}
-
-function dragEnd(event){
-    event.target.style.opacity = "1";
-}
-
-function allowDrop(event){
-    event.preventDefault();
-}
-
-function placeTiles(letter, slotIndex) {
-  // Only allow tile to be placed in correct slot
-  if (valentine[slotIndex] === letter && slot[slotIndex] === "") {
-    slot[slotIndex] = letter;
-    return true;
-  }
-  return false;
-}
-
-
-
-function drop(event){
-    event.preventDefault();
-    const letter = event.dataTransfer.getData("text/plain");
-    const slotIndex = event.target.dataset.index;
-    const success = placeTiles(letter, slotIndex);
-    
-    if (success && draggedElement) {
-        // Display the letter in the slot and hide the tile
-        event.target.textContent = letter;
-        draggedElement.style.display = "none";
-    }
-    
-    draggedElement = null;
-}
-
-function filled(){
-    return slot.every(letter => letter !== "");
-}
-
-function isCorrect(){
-    return slot.join("") === valentine;
-}
-
-const rackEl = document.querySelector(".rack");
-const slotEl = document.querySelector(".slots");
 const statusEl = document.querySelector("#status");
+const slotsEl = document.querySelector(".slots");
+statusEl.textContent = "Drag the letters into the slots!";
 
-
+// Create slots at the bottom
+const slotElements = [];
 letters.forEach((letter, index) => {
-    const tile = document.createElement("div");
-    // Position tiles in a line below the slots with more spacing (80px = 50px tile + 30px gap)
-    const x = index * 80;
-    const y = 200; // Distance below slots
-    tile.style.left = `${x}px`;
-    tile.style.top = `${y}px`;
-    tile.className = "tile";
-    tile.textContent = shuffledLetters[index];
-    tile.draggable = true;
-    tile.dataset.letter = shuffledLetters[index];
-    rackEl.appendChild(tile);
-    tile.addEventListener("dragstart", dragStart);
-    tile.addEventListener("dragend", dragEnd);
-});
-
-for(let i = 0; i < valentine.length; i++){
     const slotDiv = document.createElement("div");
     slotDiv.className = "slot";
-    slotDiv.dataset.index = i;
-    slotDiv.addEventListener("dragover", allowDrop);
-    slotDiv.addEventListener("drop",drop)
-    slotEl.appendChild(slotDiv);
-}
+    slotDiv.dataset.index = index;
+    slotDiv.dataset.letter = "";
+    slotElements.push(slotDiv);
+    slotsEl.appendChild(slotDiv);
+});
+
+// Create tiles positioned randomly around the page
+letters.forEach((letter, index) => {
+    const tile = document.createElement("div");
+    tile.className = "tile";
+    tile.textContent = shuffledLetters[index];
+    tile.dataset.letter = shuffledLetters[index];
+    
+    // Position randomly on the page
+    const randomX = Math.random() * (window.innerWidth - 100);
+    const randomY = Math.random() * (window.innerHeight - 200);
+    tile.style.left = `${randomX}px`;
+    tile.style.top = `${randomY}px`;
+    
+    document.body.appendChild(tile);
+    
+    // Mouse events for dragging
+    tile.addEventListener("mousedown", (e) => {
+        draggedElement = tile;
+        offsetX = e.clientX - tile.offsetLeft;
+        offsetY = e.clientY - tile.offsetTop;
+    });
+});
+
+document.addEventListener("mousemove", (e) => {
+    if (draggedElement) {
+        draggedElement.style.left = `${e.clientX - offsetX}px`;
+        draggedElement.style.top = `${e.clientY - offsetY}px`;
+    }
+});
+
+document.addEventListener("mouseup", (e) => {
+    if (draggedElement) {
+        // Check if dragged element is over a slot
+        slotElements.forEach((slotEl, index) => {
+            const slotRect = slotEl.getBoundingClientRect();
+            const tileRect = draggedElement.getBoundingClientRect();
+            
+            // Check if tile overlaps with slot
+            if (!(tileRect.right < slotRect.left || 
+                  tileRect.left > slotRect.right || 
+                  tileRect.bottom < slotRect.top || 
+                  tileRect.top > slotRect.bottom)) {
+                
+                // Check if this is the correct letter for this slot
+                if (valentine[index] === draggedElement.dataset.letter && slotEl.dataset.letter === "") {
+                    slotEl.textContent = draggedElement.dataset.letter;
+                    slotEl.dataset.letter = draggedElement.dataset.letter;
+                    draggedElement.style.display = "none";
+                    slot[index] = draggedElement.dataset.letter;
+                    
+                
+                }
+            }
+        });
+    }
+    draggedElement = null;
+});
 
 
