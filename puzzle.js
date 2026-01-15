@@ -53,16 +53,37 @@ letters.forEach((letter, index) => {
         offsetX = e.clientX - tile.offsetLeft;
         offsetY = e.clientY - tile.offsetTop;
     });
+    
+    // Touch events for mobile dragging
+    tile.addEventListener("touchstart", (e) => {
+        e.preventDefault();
+        draggedElement = tile;
+        const touch = e.touches[0];
+        offsetX = touch.clientX - tile.offsetLeft;
+        offsetY = touch.clientY - tile.offsetTop;
+    });
 });
+
+// Handle both mouse and touch movement
+function handleMove(clientX, clientY) {
+    if (draggedElement) {
+        draggedElement.style.left = `${clientX - offsetX}px`;
+        draggedElement.style.top = `${clientY - offsetY}px`;
+    }
+}
 
 document.addEventListener("mousemove", (e) => {
-    if (draggedElement) {
-        draggedElement.style.left = `${e.clientX - offsetX}px`;
-        draggedElement.style.top = `${e.clientY - offsetY}px`;
-    }
+    handleMove(e.clientX, e.clientY);
 });
 
-document.addEventListener("mouseup", (e) => {
+document.addEventListener("touchmove", (e) => {
+    e.preventDefault();
+    const touch = e.touches[0];
+    handleMove(touch.clientX, touch.clientY);
+});
+
+// Handle both mouse and touch end
+function handleEnd() {
     if (draggedElement) {
         // Check if dragged element is over a slot
         slotElements.forEach((slotEl, index) => {
@@ -88,6 +109,9 @@ document.addEventListener("mouseup", (e) => {
         });
     }
     draggedElement = null;
-});
+}
+
+document.addEventListener("mouseup", handleEnd);
+document.addEventListener("touchend", handleEnd);
 
 
