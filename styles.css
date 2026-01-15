@@ -74,9 +74,11 @@ html {
   font-size: 60px;
   position: absolute;
   top: 200px;
-  left: 775px;
+  left: 50%;
+  transform: translateX(-50%);
   opacity: 0;
   transition: opacity .7s ease-in;
+  white-space: nowrap;
 }
 
 #finalMessage{
@@ -84,17 +86,20 @@ html {
   font-size: 60px;
   position: absolute;
   top: 300px;
-  left: 720px;
+  left: 50%;
+  transform: translateX(-50%);
   opacity: 0;
   transition: opacity .7s ease-in;
+  white-space: nowrap;
 }
 
 #qe{
   color: rgb(202, 252, 255);
   font-size: 80px;
   position: absolute;
-  top: 398px;
-  left: 1340px;
+  top: 370px;
+  left: 73%;
+  transform: translateX(-50%);
   opacity: 0;
-  transition: opacity .5s ease-in; 
+  transition: opacity .5s ease-in;
 }
