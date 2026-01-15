@@ -19,7 +19,14 @@ const shuffledLetters = shuffle(letters);
 
 const statusEl = document.querySelector("#status");
 const slotsEl = document.querySelector(".slots");
+const greetingEl = document.querySelector("#greeting");
+const finalMessageEl = document.querySelector("#finalMessage");
+const eqEl = document.querySelector("#qe");
 statusEl.textContent = "Drag the letters into the slots!";
+
+// Hide greeting and final message initially
+greetingEl.style.opacity = "0";
+finalMessageEl.style.opacity = "0";
 
 // Create slots at the bottom
 const slotElements = [];
@@ -103,12 +110,32 @@ function handleEnd() {
                     draggedElement.style.display = "none";
                     slot[index] = draggedElement.dataset.letter;
                     
-                
+                    // Check if puzzle is complete
+                    checkPuzzleComplete();
                 }
             }
         });
     }
     draggedElement = null;
+}
+
+// Function to check if puzzle is complete
+function checkPuzzleComplete() {
+    const isComplete = slot.every(letter => letter !== "");
+    if (isComplete) {
+        // Hide tiles and status
+        document.querySelectorAll(".tile").forEach(tile => {
+            tile.style.display = "none";
+        });
+        statusEl.style.opacity = "0";
+        
+        // Show greeting and final message with fade effect
+        greetingEl.style.opacity = "1";
+        finalMessageEl.style.opacity = "1";
+        setTimeout(() =>{
+        eqEl.style.opacity = "1";}, 1000)
+        statusEl.style.opacity = "0";
+    }
 }
 
 document.addEventListener("mouseup", handleEnd);

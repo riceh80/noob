@@ -1,9 +1,14 @@
 body{
     background-color: #ff97d2;
-    min-height: 100vh;
+    height: 100vh;
     margin: 0;
     padding: 0;
     position: relative;
+    overflow: hidden;
+}
+
+html {
+    overflow: hidden;
 }
 
 #status {
@@ -13,6 +18,8 @@ body{
     color: rgb(202, 252, 255);
     font-size: 20px;
     font-weight: bold;
+    opacity: 1;
+  transition: opacity 1s ease-out;
 }
 
 .slots {
@@ -44,8 +51,8 @@ body{
 
 .tile {
   position: absolute;
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   background: #ff97d2;
   border: 3px solid rgb(202, 252, 255);
   display: flex;
@@ -53,11 +60,41 @@ body{
   justify-content: center;
   cursor: grab;
   color: white;
-  font-size: 60px;
+  font-size: 50px;
   font-weight: bold;
   user-select: none;
 }
 
 .tile:active {
   cursor: grabbing;
+}
+
+#greeting{
+  color: rgb(202, 252, 255);
+  font-size: 60px;
+  position: absolute;
+  top: 200px;
+  left: 775px;
+  opacity: 0;
+  transition: opacity .7s ease-in;
+}
+
+#finalMessage{
+  color: rgb(202, 252, 255);
+  font-size: 60px;
+  position: absolute;
+  top: 300px;
+  left: 720px;
+  opacity: 0;
+  transition: opacity .7s ease-in;
+}
+
+#qe{
+  color: rgb(202, 252, 255);
+  font-size: 80px;
+  position: absolute;
+  top: 367px;
+  left: 1340px;
+  opacity: 0;
+  transition: opacity .5s ease-in; 
 }
