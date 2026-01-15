@@ -1,25 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <div class="center-container">
-        <img src="https://jingdaily.com/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Ff8lauh0h%2Fproduction%2F59b83ccd738ca877606ad2bab0146ec72ff52087-1280x1024.jpg%3Fq%3D90%26fit%3Dmax%26auto%3Dformat&w=3840&q=90" alt="Valentine's Day" class="valentine-image">
-        <p class="valentine-text">Will you be my valentine?</p>
-        <div class="button-container">
-            <button onclick="handleYesButtonClick()" class="valentine-button-yes">Yes</button>
-            <button onclick="handleNoButtonClick()" class="valentine-button-no">No</button>
-        </div>
+<html>
+  <head>
+    <title>Vivian's Valentine Website</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="scramble">
+      <p id="status"></p>
+      <div class="rack"></div>
+      <div class="slots"></div>
     </div>
-    <iframe style="border-radius:12px; position: fixed; bottom: 10px; right: 10px;" src="https://open.spotify.com/embed/playlist/6mUqf2Z0rnI2WpHQ96lu5E?utm_source=generator" width="400" height="200" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-
-    <div class="footer">
-        <footer>Made by Darren Hui</footer>
-    </div>
-    <script src="js/scripts.js"></script>
-</body>
+    <script src="puzzle.js"></script>
+  </body>
 </html>
