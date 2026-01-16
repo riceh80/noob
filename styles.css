@@ -73,7 +73,7 @@ html {
   color: rgb(202, 252, 255);
   font-size: 60px;
   position: absolute;
-  top: 200px;
+  top: 20%;
   left: 50%;
   transform: translateX(-50%);
   opacity: 0;
@@ -85,7 +85,7 @@ html {
   color: rgb(202, 252, 255);
   font-size: 60px;
   position: absolute;
-  top: 300px;
+  top: 30%;
   left: 50%;
   transform: translateX(-50%);
   opacity: 0;
@@ -94,10 +94,10 @@ html {
 }
 
 #qe{
-  color: rgb(202, 252, 255);
+  color: rgb(202, 252,255);
   font-size: 80px;
   position: absolute;
-  top: 397px;
+  top: 36%;
   left: 73%;
   transform: translateX(-50%);
   opacity: 0;
