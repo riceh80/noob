@@ -4,6 +4,7 @@ let draggedElement = null;
 let offsetX = 0;
 let offsetY = 0;
 const slot = new Array(valentine.length).fill("");
+const noMessage = ["wrong button", "try again", "please 🥺", "please say yes for me 🥺", "🥺", "come on darling ;(", "ur breaking my heart ;(", "dont say no please", ">:(", "VIVIAN YANG >:(", "baka :pout:"]
 
 // Shuffle function to randomize letter order
 function shuffle(array) {
@@ -23,6 +24,16 @@ const greetingEl = document.querySelector("#greeting");
 const finalMessageEl = document.querySelector("#finalMessage");
 const eqEl = document.querySelector("#qe");
 statusEl.textContent = "Drag the letters into the slots!";
+const yesEl = document.querySelector("#yes");
+const noEl = document.querySelector("#no");
+const noMessageEl = document.querySelector("#noMessage");
+
+
+function handleNoClick() {
+  const index = Math.floor(Math.random() * noMessage.length);
+  noMessageEl.textContent = noMessage[index];
+}
+
 
 // Hide greeting and final message initially
 greetingEl.style.opacity = "0";
@@ -89,6 +100,9 @@ document.addEventListener("touchmove", (e) => {
     handleMove(touch.clientX, touch.clientY);
 });
 
+
+
+
 // Handle both mouse and touch end
 function handleEnd() {
     if (draggedElement) {
@@ -134,11 +148,17 @@ function checkPuzzleComplete() {
         finalMessageEl.style.opacity = "1";
         setTimeout(() =>{
         eqEl.style.opacity = "1";}, 1000)
+        setTimeout(() =>{
+        yesEl.style.opacity = "1";}, 2000)
+         setTimeout(() =>{
+        noEl.style.opacity = "1";}, 2000)
         statusEl.style.opacity = "0";
     }
 }
 
+
+
 document.addEventListener("mouseup", handleEnd);
 document.addEventListener("touchend", handleEnd);
-
+noEl.addEventListener("click", handleNoClick);
 
