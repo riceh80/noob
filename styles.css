@@ -148,6 +148,17 @@ html {
   top: 50%;
   left: 50%;
   transform: translateX(-50%);
-
- 
 }
+
+.newpage{
+  display: none
+}
+ #yay{
+  color: rgb(202, 252, 255);
+  font-size: 30px;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+ }

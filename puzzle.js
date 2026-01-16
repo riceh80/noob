@@ -1,9 +1,10 @@
-const valentine = "VALENTINE"
+const valentine = "e"
 const letters = valentine.split("");
 let draggedElement = null;
 let offsetX = 0;
 let offsetY = 0;
 const slot = new Array(valentine.length).fill("");
+let puzzleComplete = false;
 const noMessage = ["wrong button", "try again", "please 🥺", "please say yes for me 🥺", "🥺", "come on darling ;(", "ur breaking my heart ;(", "dont say no please", ">:(", "VIVIAN YANG >:(", "baka :pout:"]
 
 // Shuffle function to randomize letter order
@@ -27,9 +28,12 @@ statusEl.textContent = "Drag the letters into the slots!";
 const yesEl = document.querySelector("#yes");
 const noEl = document.querySelector("#no");
 const noMessageEl = document.querySelector("#noMessage");
-
+const yesBtn = document.querySelector("#yes");
+const gameEl = document.querySelector(".scramble");
+const newPageEl = document.querySelector(".newpage");
 
 function handleNoClick() {
+  if (!puzzleComplete) return;
   const index = Math.floor(Math.random() * noMessage.length);
   noMessageEl.textContent = noMessage[index];
 }
@@ -137,6 +141,7 @@ function handleEnd() {
 function checkPuzzleComplete() {
     const isComplete = slot.every(letter => letter !== "");
     if (isComplete) {
+        puzzleComplete = true;
         // Hide tiles and status
         document.querySelectorAll(".tile").forEach(tile => {
             tile.style.display = "none";
@@ -162,3 +167,8 @@ document.addEventListener("mouseup", handleEnd);
 document.addEventListener("touchend", handleEnd);
 noEl.addEventListener("click", handleNoClick);
 
+yesBtn.addEventListener("click", () => {
+  if (!puzzleComplete) return;
+  gameEl.style.display = "none";
+  newPageEl.style.display = "block";
+});
