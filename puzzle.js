@@ -7,7 +7,7 @@ const slot = new Array(valentine.length).fill("");
 let puzzleComplete = false;
 const noMessage = ["wrong button", "try again", "please 🥺", "please say yes for me 🥺", "🥺", "come on darling ;(", 
     "ur breaking my heart ;(", "dont say no please", ">:(", "VIVIAN YANG >:(", "baka :pout:", 
-    "CHERE PLSSSSS MON AMOUR PLSSS"]
+    "CHERE PLSSSSS MON AMOUR PLSSS", "please speed i need this my mom kinda homeless", "yk ur very cute u should press yes"]
 
 // Shuffle function to randomize letter order
 function shuffle(array) {
