@@ -1,11 +1,13 @@
-const valentine = "e"
+const valentine = "VALENTINE"
 const letters = valentine.split("");
 let draggedElement = null;
 let offsetX = 0;
 let offsetY = 0;
 const slot = new Array(valentine.length).fill("");
 let puzzleComplete = false;
-const noMessage = ["wrong button", "try again", "please 🥺", "please say yes for me 🥺", "🥺", "come on darling ;(", "ur breaking my heart ;(", "dont say no please", ">:(", "VIVIAN YANG >:(", "baka :pout:"]
+const noMessage = ["wrong button", "try again", "please 🥺", "please say yes for me 🥺", "🥺", "come on darling ;(", 
+    "ur breaking my heart ;(", "dont say no please", ">:(", "VIVIAN YANG >:(", "baka :pout:", 
+    "CHERE PLSSSSS MON AMOUR PLSSS"]
 
 // Shuffle function to randomize letter order
 function shuffle(array) {

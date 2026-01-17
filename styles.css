@@ -157,8 +157,15 @@ html {
   color: rgb(202, 252, 255);
   font-size: 30px;
   position: absolute;
-  top: 60%;
+  top: 57%;
   left: 50%;
   transform: translateX(-50%);
   white-space: nowrap;
+ }
+
+ #kissingKitty{
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translateX(-50%);
  }
