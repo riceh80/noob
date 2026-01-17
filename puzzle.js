@@ -9,6 +9,7 @@ const noMessage = ["wrong button", "try again", "please 🥺", "please say yes f
     "ur breaking my heart ;(", "dont say no please", ">:(", "VIVIAN YANG >:(", "baka :pout:", 
     "CHERE PLSSSSS MON AMOUR PLSSS", "please speed i need this my mom kinda homeless", "yk ur very cute u should press yes"]
 
+
 // Shuffle function to randomize letter order
 function shuffle(array) {
     const shuffled = [...array];
@@ -106,7 +107,7 @@ document.addEventListener("touchmove", (e) => {
     handleMove(touch.clientX, touch.clientY);
 });
 
-
+const music = document.querySelector("#music")
 
 
 // Handle both mouse and touch end
@@ -145,6 +146,7 @@ function checkPuzzleComplete() {
     if (isComplete) {
         puzzleComplete = true;
         // Hide tiles and status
+        music.play()
         document.querySelectorAll(".tile").forEach(tile => {
             tile.style.display = "none";
         });
@@ -152,13 +154,14 @@ function checkPuzzleComplete() {
         
         // Show greeting and final message with fade effect
         greetingEl.style.opacity = "1";
-        finalMessageEl.style.opacity = "1";
         setTimeout(() =>{
-        eqEl.style.opacity = "1";}, 1000)
+        finalMessageEl.style.opacity = "1";}, 2000)
         setTimeout(() =>{
-        yesEl.style.opacity = "1";}, 2000)
+        eqEl.style.opacity = "1";}, 4000)
+        setTimeout(() =>{
+        yesEl.style.opacity = "1";}, 5000)
          setTimeout(() =>{
-        noEl.style.opacity = "1";}, 2000)
+        noEl.style.opacity = "1";}, 5000)
         statusEl.style.opacity = "0";
     }
 }
