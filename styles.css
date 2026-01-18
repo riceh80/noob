@@ -164,7 +164,7 @@ html {
 
 #right{
   position: absolute;
-  top: 41%;
+  top: 51%;
   left: -1%;
   transform: translate(-50%, -50%);
   white-space: nowrap;
