@@ -151,6 +151,38 @@ html {
   white-space: nowrap;
 }
 
+#top{
+  position: absolute;
+  top: 19.5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  width: 100%;
+  opacity: 0;
+  transition: opacity .5s ease-in;
+}
+
+#right{
+  position: absolute;
+  top: 41%;
+  left: -1%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  transform: rotate(180deg);
+  opacity: 0;
+  transition: opacity .5s ease-in;
+}
+
+#cherry{
+  position: absolute;
+  top: 110%;
+  left: 90%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity .5s ease-in;
+}
+
 .newpage{
   display: none
 }

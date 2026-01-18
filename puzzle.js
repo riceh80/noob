@@ -1,4 +1,4 @@
-const valentine = "VALENTINE"
+const valentine = "e"
 const letters = valentine.split("");
 let draggedElement = null;
 let offsetX = 0;
@@ -34,6 +34,9 @@ const noMessageEl = document.querySelector("#noMessage");
 const yesBtn = document.querySelector("#yes");
 const gameEl = document.querySelector(".scramble");
 const newPageEl = document.querySelector(".newpage");
+const topEl = document.querySelector("#top")
+const rightEl = document.querySelector("#right");
+const cherryEl = document.querySelector("#cherry");
 
 function handleNoClick() {
   if (!puzzleComplete) return;
@@ -154,6 +157,9 @@ function checkPuzzleComplete() {
         
         // Show greeting and final message with fade effect
         greetingEl.style.opacity = "1";
+        rightEl.style.opacity = ".4";
+        topEl.style.opacity = ".9";
+        cherryEl.style.opacity = ".7";
         setTimeout(() =>{
         finalMessageEl.style.opacity = "1";}, 2000)
         setTimeout(() =>{
