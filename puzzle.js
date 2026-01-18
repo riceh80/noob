@@ -1,4 +1,4 @@
-const valentine = "e"
+const valentine = "VALENTINE"
 const letters = valentine.split("");
 let draggedElement = null;
 let offsetX = 0;
