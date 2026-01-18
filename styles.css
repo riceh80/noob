@@ -153,13 +153,12 @@ html {
 
 #top{
   position: absolute;
-  top: 19.5%;
+  top: -100%;
   left: 50%;
   transform: translate(-50%, -50%);
   white-space: nowrap;
   width: 100%;
-  opacity: 0;
-  transition: opacity .5s ease-in;
+  transition: top 2s ease-in;
 }
 
 #right{
@@ -170,17 +169,16 @@ html {
   white-space: nowrap;
   transform: rotate(180deg);
   opacity: 0;
-  transition: opacity .5s ease-in;
+  transition: opacity 3s ease-in;
 }
 
 #cherry{
   position: absolute;
   top: 110%;
-  left: 90%;
+  left: 150%;
   transform: translate(-50%, -50%);
   white-space: nowrap;
-  opacity: 0;
-  transition: opacity .5s ease-in;
+  transition: left 2s ease-in;
 }
 
 .newpage{

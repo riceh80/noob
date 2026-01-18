@@ -149,6 +149,8 @@ function checkPuzzleComplete() {
     if (isComplete) {
         puzzleComplete = true;
         // Hide tiles and status
+        music.volume = 0.7;
+        music.playbackRate = 1.25;
         music.play()
         document.querySelectorAll(".tile").forEach(tile => {
             tile.style.display = "none";
@@ -158,16 +160,16 @@ function checkPuzzleComplete() {
         // Show greeting and final message with fade effect
         greetingEl.style.opacity = "1";
         rightEl.style.opacity = ".4";
-        topEl.style.opacity = ".9";
-        cherryEl.style.opacity = ".7";
+        topEl.style.top = "19.5%";
+        cherryEl.style.left = "90%";
         setTimeout(() =>{
-        finalMessageEl.style.opacity = "1";}, 2000)
+        finalMessageEl.style.opacity = "1";}, 3000)
         setTimeout(() =>{
-        eqEl.style.opacity = "1";}, 4000)
+        eqEl.style.opacity = "1";}, 5000)
         setTimeout(() =>{
-        yesEl.style.opacity = "1";}, 5000)
+        yesEl.style.opacity = "1";}, 6000)
          setTimeout(() =>{
-        noEl.style.opacity = "1";}, 5000)
+        noEl.style.opacity = "1";}, 6000)
         statusEl.style.opacity = "0";
     }
 }
